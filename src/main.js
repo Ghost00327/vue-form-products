@@ -2,6 +2,7 @@ import Vue from "vue";
 import App from "./App.vue";
 import Login from "./components/Login.vue";
 import Products from "./components/Products.vue";
+import NotFound from "./components/NotFound.vue";
 import vuetify from "./plugins/vuetify";
 import VueRouter from "vue-router";
 
@@ -12,8 +13,9 @@ Vue.use(VueRouter);
 const router = new VueRouter({
   mode: "history",
   routes: [
+    { path: "/", redirect: "/login" },
     {
-      path: "/",
+      path: "/login",
       name: "login",
       component: Login,
     },
@@ -22,6 +24,8 @@ const router = new VueRouter({
       name: "products",
       component: Products,
     },
+    { path: "/404", component: NotFound },
+    { path: "*", redirect: "/404" },
   ],
 });
 

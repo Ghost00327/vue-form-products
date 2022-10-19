@@ -28,9 +28,7 @@
           </v-text-field>
           <v-divider></v-divider>
           <v-card-actions>
-            <v-btn color="success">Register</v-btn>
             <v-btn color="info" type="submit">Login</v-btn>
-
             <v-spacer></v-spacer>
           </v-card-actions>
         </v-form>
@@ -69,6 +67,8 @@ export default {
   methods: {
     handleSubmit() {
       this.submitted = true;
+      this.validMsg.email = "";
+      this.validMsg.password = "";
 
       this.v$.$touch();
       if (this.v$.$invalid) {

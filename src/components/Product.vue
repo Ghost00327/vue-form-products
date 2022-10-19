@@ -40,9 +40,13 @@ export default {
     },
   },
   data: () => ({
-    products: "",
+    imgUrl: "",
   }),
 
-  methods: {},
+  methods: {
+    changeImgNo(index) {
+      index;
+    },
+  },
 };
 </script>
